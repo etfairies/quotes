@@ -1,1 +1,1 @@
-# quotes
+Quotes - Website for sharing and liking famous quotes.
