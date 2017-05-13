@@ -9,15 +9,15 @@ router.get('/helloworld', function (req, res) {
     res.render('helloworld', {title: 'Hello World!'});
 });
 
-//router.get('/quotelist', function (req, res) {
-//    var db = req.db;
-//    var collection = db.get('quotecollection');
-//    collection.find({}, {}, function (e, docs) {
-//        res.render('quotelist', {
-//            "quotelist": docs
-//        });
-//    });
-//});
+router.get('/quotes', function (req, res) {
+    var db = req.db;
+    var collection = db.get('quotecollection');
+    collection.find({}, {}, function (e, docs) {
+        res.render('quotelist', {
+            "quotelist": docs
+        });
+    });
+});
 
 //router.get('/newquote', function (req, res) {
 //    res.render('newquote', {title: 'Add New Quote'});

@@ -1,6 +1,6 @@
 ## Quotes
 Demo web app for sharing and liking famous quotes.
 
-[Link to app](https://warm-beyond-30004.herokuapp.com/)
+[Link to the app](https://warm-beyond-30004.herokuapp.com/)
 
 [Tuntikirjanpito](https://docs.google.com/spreadsheets/d/110BziuB9o5ny5d-94ZgipXj8ozYmjujPAZQDkrT3v9c/edit?usp=sharing)
