@@ -13,9 +13,20 @@ router.get('/quotes', function (req, res) {
 //    var db = req.db;
 //    var collection = db.get('quotecollection');
 
-    var quotelist = ["It is during our darkest moments that we must focus to see the light.",
-        "The only thing necessary for the triumph of evil is for good men to do nothing.",
-        "The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails."];
+    var quotelist = [
+        {
+            'author': 'Aristotle',
+            'description': 'It is during our darkest moments that we must focus to see the light.'
+        },
+        {
+            'author': 'Edmund Burke',
+            'description': 'The only thing necessary for the triumph of evil is for good men to do nothing.'
+        },
+        {
+            'author': 'William Arthur Ward',
+            'description': 'The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails.'
+        }
+    ];
 
     res.render('quotelist', {
         "quotelist": quotelist
@@ -52,4 +63,4 @@ router.get('/quotes', function (req, res) {
 //    });
 //});
 
-        module.exports = router;
+module.exports = router;

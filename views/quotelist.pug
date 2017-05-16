@@ -4,6 +4,6 @@ block content
     h1.
         Quotes
     ul
-        each quote in quotelist
-            li #{quote}
+        each quote, i in quotelist
+            li #{quote.description} - #{quote.author}
                 
