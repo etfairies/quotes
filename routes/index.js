@@ -27,9 +27,9 @@ router.get('/quotes', function (req, res) {
     });
 });
 
-//router.get('/newquote', function (req, res) {
-//    res.render('newquote', {title: 'Add New Quote'});
-//});
+router.get('/addquote', function (req, res) {
+    res.render('newquote', {title: 'Add New Quote'});
+});
 
 //router.post('/addquote', function (req, res) {
 //    var db = req.db;
