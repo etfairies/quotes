@@ -5,13 +5,7 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'Quotes'});
 });
 
-router.get('/helloworld', function (req, res) {
-    res.render('helloworld', {title: 'Hello World!'});
-});
-
 router.get('/quotes', function (req, res) {
-//    var db = req.db;
-//    var collection = db.get('quotecollection');
 
     var quotelist = [
         {
@@ -31,14 +25,8 @@ router.get('/quotes', function (req, res) {
     res.render('quotelist', {
         "quotelist": quotelist
     });
-
-
-//    collection.find({}, {}, function (e, docs) {
-//        res.render('quotelist', {
-//            "quotelist": docs
-//        });
-//    });
 });
+
 //router.get('/newquote', function (req, res) {
 //    res.render('newquote', {title: 'Add New Quote'});
 //});
