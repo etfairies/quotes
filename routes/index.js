@@ -31,7 +31,9 @@ router.get('/addquote', function (req, res) {
     res.render('newquote', {title: 'Add New Quote'});
 });
 
-//router.post('/addquote', function (req, res) {
+router.post('/addquote', function (req, res) {
+    console.log(req.body);
+    res.redirect("/quotes");
 //    var db = req.db;
 //    
 //    var author = req.body.author;
@@ -49,6 +51,6 @@ router.get('/addquote', function (req, res) {
 //            res.redirect("quotelist");
 //        }
 //    });
-//});
+});
 
 module.exports = router;
