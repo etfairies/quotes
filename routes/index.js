@@ -10,15 +10,24 @@ router.get('/helloworld', function (req, res) {
 });
 
 router.get('/quotes', function (req, res) {
-    var db = req.db;
-    var collection = db.get('quotecollection');
-    collection.find({}, {}, function (e, docs) {
-        res.render('quotelist', {
-            "quotelist": docs
-        });
-    });
-});
+//    var db = req.db;
+//    var collection = db.get('quotecollection');
 
+    var quotelist = ["It is during our darkest moments that we must focus to see the light.",
+        "The only thing necessary for the triumph of evil is for good men to do nothing.",
+        "The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails."];
+
+    res.render('quotelist', {
+        "quotelist": quotelist
+    });
+
+
+//    collection.find({}, {}, function (e, docs) {
+//        res.render('quotelist', {
+//            "quotelist": docs
+//        });
+//    });
+});
 //router.get('/newquote', function (req, res) {
 //    res.render('newquote', {title: 'Add New Quote'});
 //});
@@ -43,4 +52,4 @@ router.get('/quotes', function (req, res) {
 //    });
 //});
 
-module.exports = router;
+        module.exports = router;
