@@ -25,7 +25,7 @@ router.get('/quotes', function (req, res) {
                 error: err
             });
         }
-        
+
         res.render('quotelist', {
             "quotelist": results
         });
@@ -49,6 +49,12 @@ router.post('/addquote', function (req, res) {
         }
     });
     res.redirect("/quotes");
+});
+
+// Increment 'likes' of given quote
+router.put('/quotes', function (req, res) {
+    console.log("Put request");
+    console.log(req);
 });
 
 module.exports = router;
