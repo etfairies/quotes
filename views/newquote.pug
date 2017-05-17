@@ -4,5 +4,6 @@ block content
     h1= title
     form#formAddQuote(name="addquote",method="post",action="/addquote")
         input#inputQuoteAuthor(type="text", placeholder="author", name="author")
-        input#inputDescription(type="text", placeholder="description", name="description")
+        input#inputDescription(type="text", placeholder="quote", name="description")
+        input#inputLikes(type="hidden" name="likes" value=0)
         button#btnSubmit(type="submit") submit
