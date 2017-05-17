@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb');
 var db;
+var ObjectId = require('mongodb').ObjectId;
 
 // Connect  to the database
 MongoClient.connect('mongodb://etfairies:etfairies@ds143221.mlab.com:43221/heroku_lkqmfpvw', function (err, database) {
@@ -52,9 +53,13 @@ router.post('/addquote', function (req, res) {
 });
 
 // Increment 'likes' of given quote
-router.put('/quotes', function (req, res) {
-    console.log("Put request");
-    console.log(req);
+router.post('/quotes', function (req, res) {
+
+    db.collection('quotes').update({_id: ObjectId(req.body.quoteid)}, {
+        $inc: {likes: 1}
+    });
+
+    res.redirect("/quotes");
 });
 
 module.exports = router;

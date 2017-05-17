@@ -6,7 +6,7 @@ block content
     ul
         each quote, i in quotelist
             li #{quote.description} - #{quote.author}. #{quote.likes} likes 
-                form#formLike(name="addlike", method="put", action="/quotes") 
-                    input#inputLikes(type="hidden" name="quoteid" value="#{quote._id.$oid}")
+                form#formLike(name="addlike", method="post", action="/quotes") 
+                    input#inputLikes(type="hidden" name="quoteid" value=quote._id)
                     button#btnSubmit(type="submit") Like
                 
