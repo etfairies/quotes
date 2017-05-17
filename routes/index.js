@@ -39,8 +39,14 @@ router.get('/addquote', function (req, res) {
 });
 
 // Add new quote to database
-router.post('/addquote', function (req, res) {
-    db.collection('quotes').save(req.body, function (err, result) {
+router.post('/addquote', function (req, res) { 
+    var quote = {
+        author: req.body.author,
+        description: req.body.description,
+        likes: 0
+    }
+    
+    db.collection('quotes').save(quote, function (err, result) {
         if (err) {
             res.status(err.status || 500);
             res.render('error', {
@@ -54,7 +60,6 @@ router.post('/addquote', function (req, res) {
 
 // Increment 'likes' of given quote
 router.post('/quotes', function (req, res) {
-
     db.collection('quotes').update({_id: ObjectId(req.body.quoteid)}, {
         $inc: {likes: 1}
     });
