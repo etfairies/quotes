@@ -39,31 +39,29 @@ router.get('/addquote', function (req, res) {
 });
 
 // Add new quote to database
-router.post('/addquote', function (req, res) { 
+router.post('/addquote', function (req, res) {
     var quote = {
         author: req.body.author,
         description: req.body.description,
         likes: 0
     }
-    
-    db.collection('quotes').save(quote, function (err, result) {
-        if (err) {
-            res.status(err.status || 500);
-            res.render('error', {
-                message: err.message,
-                error: err
-            });
-        }
-    });
+
+    db.collection('quotes').save(quote);
     res.redirect("/quotes");
 });
 
 // Increment 'likes' of given quote
-router.post('/quotes', function (req, res) {
+router.post('/quotes/like', function (req, res) {
     db.collection('quotes').update({_id: ObjectId(req.body.quoteid)}, {
         $inc: {likes: 1}
     });
 
+    res.redirect("/quotes");
+});
+
+// Delete quote
+router.post('/quotes/delete', function (req, res) {
+    db.collection('quotes').remove({_id: ObjectId(req.body.quoteid)});
     res.redirect("/quotes");
 });
 
