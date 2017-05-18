@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/etfairies/quotes.svg?branch=master)](https://travis-ci.org/etfairies/quotes)
+
 ## Quotes
 Demo web app for sharing and liking famous quotes.
 
