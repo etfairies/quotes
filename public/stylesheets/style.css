@@ -8,3 +8,8 @@ a {
   padding-right: 10px;
   padding-left: 10px;
 }
+
+#quotebuttons li {
+    list-style-type: none;
+}
+

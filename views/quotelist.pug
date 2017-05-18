@@ -5,10 +5,16 @@ block content
         Quotes
     ul
         each quote, i in quotelist
-            li #{quote.description} - #{quote.author}. #{quote.likes} likes 
-                form#formLike(name="addlike", method="post", action="/quotes/like") 
-                    input#inputLikes(type="hidden" name="quoteid" value=quote._id)
-                    button#btnSubmit(type="submit") Like
-                form#formDelete(name="delete", method="post", action="/quotes/delete") 
-                    input#inputLikes(type="hidden" name="quoteid" value=quote._id)
-                    button#btnSubmit(type="submit") Delete
+            li #{quote.description} - #{quote.author}.  
+                
+                ul(id='quotebuttons')
+                    li #{quote.likes} likes
+                    li 
+                        form#formLike(name="addlike", method="post", action="/quotes/like") 
+                            input#inputLikes(type="hidden" name="quoteid" value=quote._id)
+                            button#btnSubmit(type="submit") Like
+                
+                    li 
+                        form#formDelete(name="delete", method="post", action="/quotes/delete", onclick="return confirm('Delete this quote?')") 
+                            input#inputLikes(type="hidden" name="quoteid" value=quote._id)
+                            button#btnSubmit(type="submit") Delete
