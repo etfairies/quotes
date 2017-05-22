@@ -3,15 +3,46 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: null,
+      fetching: true
+    };
+  }
+
+  componentDidMount() {
+    fetch('/react')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(json => {
+        this.setState({
+          message: json.message,
+          fetching: false
+        });
+      }).catch(e => {
+        this.setState({
+          message: `API call failed: ${e}`,
+          fetching: false
+        });
+      })
+  }
+
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h1>Quotes</h1>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+        
+        <p className="content">
+          {this.state.fetching
+            ? 'Fetching message from API'
+            : this.state.message}
         </p>
       </div>
     );
