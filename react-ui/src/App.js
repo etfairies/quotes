@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/react')
+    fetch('/hello')
       .then(response => {
         if (!response.ok) {
           throw new Error(`status ${response.status}`);

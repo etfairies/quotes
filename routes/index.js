@@ -65,14 +65,4 @@ router.post('/quotes/delete', function (req, res) {
     res.redirect("/quotes");
 });
 
-router.get('/react', function (req, res) {
-    res.set('Content-Type', 'application/json');
-    var mes = { 'message': "Hello from the custom server!" };
-    res.send(mes);
-});
-
-router.get('*', function(request, response) {
-  response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
-});
-
 module.exports = router;
