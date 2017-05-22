@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Quote from './Quote';
 
 class App extends Component {
   constructor(props) {
@@ -37,12 +38,8 @@ class App extends Component {
         <div className="App-header">
           <h1>Quotes</h1>
         </div>
-        
-        <p className="content">
-          {this.state.fetching
-            ? 'Fetching message from API'
-            : this.state.message}
-        </p>
+       
+        <Quote />
       </div>
     );
   }
