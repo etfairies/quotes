@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/hello')
+    fetch('/')
       .then(response => {
         if (!response.ok) {
           throw new Error(`status ${response.status}`);
@@ -29,7 +29,7 @@ class App extends Component {
           message: `API call failed: ${e}`,
           fetching: false
         });
-      })
+      });
   }
 
   render() {
@@ -38,7 +38,7 @@ class App extends Component {
         <div className="App-header">
           <h1>Quotes</h1>
         </div>
-       
+        
         <Quote />
       </div>
     );

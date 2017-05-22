@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
 // Answer API requests.
-app.get('/hello', function (req, res) {
+app.get('/', function (req, res) {
     res.set('Content-Type', 'application/json');
     var mes = {"message": "Hello from the custom server!"};
     res.send(mes);
@@ -22,3 +22,6 @@ app.get('*', function(request, response) {
 app.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
 });
+
+
+module.exports = app;
