@@ -13,18 +13,18 @@ var testquote = { author: 'author1', description: 'quote1' };
 
 describe('Quotes', function () {
     // Database connection
-    var database = null;
-
-    before(function (done) {
-        MongoClient.connect('mongodb://etfairies:etfairies@ds143071.mlab.com:43071/heroku_nt73w1pp').then(function (db) {
-            database = db;
-            return database.dropDatabase();
-        }).then(function () {}).then(done, done);
-    });
-
-    afterEach(function (done) {
-        database.dropDatabase().then(function () {}).then(done, done);
-    });
+//    var database = null;
+//
+//    before(function (done) {
+//        MongoClient.connect('mongodb://etfairies:etfairies@ds143071.mlab.com:43071/heroku_nt73w1pp').then(function (db) {
+//            database = db;
+//            return database.dropDatabase();
+//        }).then(function () {}).then(done, done);
+//    });
+//
+//    afterEach(function (done) {
+//        database.dropDatabase().then(function () {}).then(done, done);
+//    });
 
     //Tests
 
