@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Quote extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
-        var quote = {"author": " Edmund Burke", "description": "The only thing necessary for the triumph of evil is for good men to do nothing.", "likes": 34};
         return (
-                <div className="Quote">
-                    <h3>{quote.description}</h3>
-                    <p>{quote.author}</p>
+                <li>
+                    <h3>{this.props.description}</h3>
+                    <p>{this.props.author}</p>
                     <div id="likes">
-                        <p>{quote.likes} likes</p>
+                        <p>{this.props.likes} likes</p>
                     </div>
-                </div>
+                </li>
                 );
     }
 }
