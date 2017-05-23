@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/')
+    fetch('/api')
       .then(response => {
         if (!response.ok) {
           throw new Error(`status ${response.status}`);
@@ -38,7 +38,11 @@ class App extends Component {
         <div className="App-header">
           <h1>Quotes</h1>
         </div>
-        
+        <p className="App-intro">
+          {this.state.fetching
+            ? 'Fetching message from API'
+            : this.state.message}
+        </p>
         <Quote />
       </div>
     );
