@@ -18,7 +18,7 @@ app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 //});
 
 app.listen(PORT, function () {
-  console.log(`Listening on port ${PORT}`);
+  console.log('Listening on port ${PORT}');
 });
 
 module.exports = app;
