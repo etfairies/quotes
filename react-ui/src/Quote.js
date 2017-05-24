@@ -18,10 +18,11 @@ function QuoteBox(props) {
     return (
             <div id="Quote">
                 <h3>{quote.description}</h3>
-                <p>{quote.author}</p><br/>
-                <p>{quote.likes} likes</p>
+                <p>{quote.author}</p>
+                
             
                 <div id="QuoteButtons">
+                <p>{quote.likes} likes</p>
                     <LikeButton quote={quote} />
                     <DeleteButton quote={quote} />
                 </div>

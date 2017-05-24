@@ -4,14 +4,13 @@
 
 .App-header {
     background-color: #00cccc;
-    height: 70px;
+    height: 50px;
     padding: 20px;
     color: white;
 }
 
 .App-header h1 {
-    font-size: 200%;
-    vertical-align: top;
+    margin-bottom: 20px;
 }
 
 #Quote {
@@ -31,5 +30,9 @@
 #Quote p {
     line-height: 1.5;
     display: inline-block;
+    vertical-align: bottom;
+}
+
+#QuoteButtons {
     vertical-align: bottom;
 }
