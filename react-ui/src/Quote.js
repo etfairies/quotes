@@ -9,16 +9,19 @@ class Quote extends Component {
     render() {
         return (
                 <li>
-                    <h3>{this.props.description}</h3>
-                    <p>{this.props.author}</p>
+                    <h3>{this.props.quote.description}</h3>
+                    <p>{this.props.quote.author}</p>
                     <div id="likes">
-                        <p>{this.props.likes} likes</p>
+                        <p>{this.props.quote.likes} likes</p>
                     </div>
                 </li>
                 );
     }
 }
 
+class QuoteBox extends Component {
+    
+}
 //class LikeButton extends Component {
 //    render() {
 //        return null;

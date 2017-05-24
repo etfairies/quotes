@@ -7,7 +7,7 @@ class QuotePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            quotes: null,
+            quotes: [],
             message: null,
             fetching: true
         };
@@ -29,7 +29,7 @@ class QuotePage extends Component {
                     });
                 }).catch(e => {
             this.setState({
-                quotes: null,
+                quotes: [],
                 message: `API call failed: ${e}`,
                 fetching: false
             });
@@ -39,8 +39,7 @@ class QuotePage extends Component {
     render() {
         return (
                 <div className="Quotelist">
-                    <QuoteList quotes={this.state.quotes}
-                               message="{this.state.message}"/>
+                    <QuoteList quotes={this.state.quotes}/>
                 
                 </div>
                 );
@@ -51,7 +50,6 @@ function QuoteList(props) {
     const quotes = props.quotes;
     return (
             <div>
-                <p>{props.message}</p>
                 <ul>
                     {quotes.map((quote) =>
                                 <Quote key={quote._id} quote={quote}/>
