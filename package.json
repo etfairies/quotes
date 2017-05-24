@@ -39,9 +39,5 @@
   "keywords": [],
   "engines": {
     "node": "6.10.3"
-  },
-  "cacheDirectories": [
-    "node_modules",
-    "react-ui/node_modules"
-  ]
+  }
 }
