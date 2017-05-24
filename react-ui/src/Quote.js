@@ -16,13 +16,13 @@ class Quote extends Component {
 function QuoteBox(props) {
     const quote = props.quote;
     return (
-            <li>
+            <div id="Quote">
                 <h3>{quote.description}</h3>
                 <p>{quote.author}</p>
                 <div id="likes">
                     <p>{quote.likes} likes</p>
                 </div>
-            </li>
+            </div>
             );
 }
 

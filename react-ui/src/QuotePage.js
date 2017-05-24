@@ -49,11 +49,10 @@ function QuoteList(props) {
     const quotes = props.quotes;
     return (
             <div>
-                <ul>
-                    {quotes.map((quote) =>
+                {quotes.map((quote) =>
                                 <Quote key={quote._id} quote={quote}/>
-                                )}
-                </ul>
+                            )}
+            
             </div>);
 }
 export default QuotePage;
