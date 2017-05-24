@@ -12,7 +12,7 @@ MongoClient.connect('mongodb://etfairies:etfairies@ds143221.mlab.com:43221/herok
 });
 
 // Get index page
-app.get('/', function (req, res) {
+router.get('/', function (req, res) {
   res.set('Content-Type', 'application/json');
   res.send('{"message":"Hello from the custom server!"}');
 });
