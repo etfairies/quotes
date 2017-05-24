@@ -4,4 +4,4 @@
 /nbproject
 /data/*
 /react-ui/node_modules
-./npm-debug.log
+npm-debug.log
