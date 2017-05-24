@@ -8,30 +8,28 @@ class Quote extends Component {
 
     render() {
         return (
-                <li>
-                    <h3>{this.props.quote.description}</h3>
-                    <p>{this.props.quote.author}</p>
-                    <div id="likes">
-                        <p>{this.props.quote.likes} likes</p>
-                    </div>
-                </li>
+                <QuoteBox quote={this.props.quote} />
                 );
     }
 }
 
-class QuoteBox extends Component {
-    
+function QuoteBox(props) {
+    const quote = props.quote;
+    return (
+            <li>
+                <h3>{quote.description}</h3>
+                <p>{quote.author}</p>
+                <div id="likes">
+                    <p>{quote.likes} likes</p>
+                </div>
+            </li>
+            );
 }
+
 //class LikeButton extends Component {
-//    render() {
-//        return null;
-//    }
 //}
 //
 //class DeleteButton extends Component {
-//    render() {
-//        return null;
-//    }
 //}
 
 export default Quote;

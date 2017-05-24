@@ -40,7 +40,6 @@ class QuotePage extends Component {
         return (
                 <div className="Quotelist">
                     <QuoteList quotes={this.state.quotes}/>
-                
                 </div>
                 );
     }
