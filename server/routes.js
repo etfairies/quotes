@@ -30,11 +30,6 @@ router.get('/quotes', function (req, res) {
     });
 });
 
-// Get 'add quote' page 
-router.get('/add', function (req, res) {
-    res.render('newquote', {title: 'Add New Quote'});
-});
-
 // Add new quote to database
 router.post('/add', function (req, res) {
     var quote = {

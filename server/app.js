@@ -9,8 +9,7 @@ var routes = require('./routes');
 app.use('/', routes);
 
 // Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
-
+app.use(express.static(path.resolve(__dirname, '../react-ui/public')));
 
 // All remaining requests return the React app, so it can handle routing.
 app.get('*', function(request, response) {
@@ -18,7 +17,5 @@ app.get('*', function(request, response) {
 });
 
 app.listen(PORT, function () {
-  //console.log(`Listening on port ${PORT}`);
+  console.log(`Listening on port ${PORT}`);
 });
-
-module.exports = app;
