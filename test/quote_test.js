@@ -1,6 +1,6 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
-var server = require('../bin/www');
+var server = require('../server/app');
 var should = chai.should();
 var expect = chai.expect;
 var MongoClient = require('mongodb');
