@@ -48,7 +48,7 @@ class QuotePage extends Component {
 function QuoteList(props) {
     const quotes = props.quotes;
     return (
-            <div>
+            <div id="Quotelist">
                 {quotes.map((quote) =>
                                 <Quote key={quote._id} quote={quote}/>
                             )}

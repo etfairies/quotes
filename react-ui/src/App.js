@@ -10,8 +10,9 @@ class App extends Component {
                     <div className="App-header">
                         <h1>Quotes</h1>
                     </div>
-                
-                    <QuotePage />
+                    <div class="content">
+                        <QuotePage />
+                    </div>
                 </div>
                 );
     }
