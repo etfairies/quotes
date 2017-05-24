@@ -12,8 +12,9 @@ MongoClient.connect('mongodb://etfairies:etfairies@ds143221.mlab.com:43221/herok
 });
 
 // Get index page
-router.get('/', function (req, res, next) {
-    res.send('{"message": "Hello from node server"}');
+app.get('/', function (req, res) {
+  res.set('Content-Type', 'application/json');
+  res.send('{"message":"Hello from the custom server!"}');
 });
 
 // List all quotes from the database
