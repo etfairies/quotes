@@ -1,6 +1,6 @@
 *~
 *.~
 /node_modules
-/nbproject/private/
+/nbproject
 /data/*
 /react-ui/node_modules
