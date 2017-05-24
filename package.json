@@ -1,8 +1,9 @@
 {
   "name": "quotes",
   "version": "1.0.0",
+    "main": "server/index",
   "scripts": {
-    "start": "node server/app",
+    "start": "node server/index",
     "test": "mocha",
     "heroku-postbuild": "cd react-ui/ && npm install --only=dev && npm install && npm run build"
   },
