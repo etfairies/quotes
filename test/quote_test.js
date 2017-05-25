@@ -28,14 +28,14 @@ describe('Quotes', function () {
 
     //Tests
 
-    it('should get index page on / GET', function (done) {
-        chai.request(server)
-                .get('/')
-                .end(function (err, res) {
-                    res.should.have.status(200);
-                    done();
-                });
-    });
+//    it('should get index page on / GET', function (done) {
+//        chai.request(server)
+//                .get('/')
+//                .end(function (err, res) {
+//                    res.should.have.status(200);
+//                    done();
+//                });
+//    });
 
 //    it('should list all quotes on /quotes GET', function (done) {
 //
