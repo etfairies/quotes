@@ -11,7 +11,6 @@ MongoClient.connect('mongodb://etfairies:etfairies@ds143221.mlab.com:43221/herok
     db = database;
 });
 
-
 // List all quotes from the database
 router.get('/api/quotes', function (req, res) {
     db.collection('quotes').find().toArray(function (err, results) {
