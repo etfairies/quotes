@@ -13,6 +13,18 @@
     margin-bottom: 20px;
 }
 
+.Navbar {
+    background-color: #30e8e8;
+    height: 32px;
+    color: white;
+}
+
+.Navbar a {
+     float: left;
+     padding: 10px;
+     margin-left: 20px;
+}
+
 #Quote {
     text-align: center;
     border: 1px solid;

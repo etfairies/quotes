@@ -14,7 +14,7 @@ class AddQuote extends Component {
         var quote = {author: this.state.author,
             description: this.state.description};
 
-        fetch('/api/like', {
+        fetch('/api/add', {
             method: 'POST',
             body: JSON.stringify(quote),
             headers: {
