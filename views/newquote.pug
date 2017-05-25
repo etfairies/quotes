@@ -1,8 +1,0 @@
-extends layout
-
-block content
-    h1= title
-    form#formAddQuote(name="addquote",method="post",action="/addquote")
-        input#inputQuoteAuthor(type="text", placeholder="author", name="author")
-        input#inputDescription(type="text", placeholder="quote", name="description")
-        button#btnSubmit(type="submit") Submit
