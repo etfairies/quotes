@@ -11,11 +11,6 @@ MongoClient.connect('mongodb://etfairies:etfairies@ds143221.mlab.com:43221/herok
     db = database;
 });
 
-// Get index page
-router.get('/api', function (req, res) {
-  res.set('Content-Type', 'application/json');
-  res.send('{"message":"Hello from the custom server!"}');
-});
 
 // List all quotes from the database
 router.get('/api/quotes', function (req, res) {
@@ -39,7 +34,6 @@ router.post('/api/add', function (req, res) {
     }
 
     db.collection('quotes').save(quote);
-    res.redirect("/quotes");
 });
 
 // Increment 'likes' of given quote
@@ -47,8 +41,6 @@ router.post('/api/like', function (req, res) {
     db.collection('quotes').update({_id: ObjectId(req.body.quoteid)}, {
         $inc: {likes: 1}
     });
-
-    res.redirect("/quotes");
 });
 
 // Delete quote

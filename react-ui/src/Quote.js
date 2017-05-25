@@ -10,19 +10,30 @@ class Quote extends Component {
     }
 
     handleLike(event) {
-        var quoteid = {'quoteid' : this.props.quote._id };
-        
-        fetch('/api/like', )
+
+        var quoteid = {quoteid: this.props.quote._id};
+
+        fetch('/api/like', {
+            method: 'POST',
+            body: JSON.stringify(quoteid),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+
+        }).then(function (response) {
+            return response.json();
+        });
     }
 
     handleDelete(event) {
-        alert("Clicked delete");
+        alert("Clicked Delete");
     }
 
     render() {
         return (
-                <QuoteBox quote={this.props.quote}
-                          instance={this}/>
+                <QuoteBox quote={this.props.quote} instance={this} />
+
                 );
     }
 }
@@ -36,7 +47,8 @@ function QuoteBox(props) {
             
                 <div id="QuoteButtons">
                     <p>{quote.likes} likes</p>
-                    <LikeButton quote={quote} instance={props.instance}/>
+        
+                    <LikeButton quote={quote} instance={props.instance} />
                     <DeleteButton quote={quote} instance={props.instance}/>
                 </div>
             </div>
@@ -51,7 +63,6 @@ function LikeButton(props) {
             </form>
             );
 }
-
 
 function DeleteButton(props) {
     const quote = props.quote;
