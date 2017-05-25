@@ -14,7 +14,7 @@ class QuotePage extends Component {
     }
 
     componentDidMount() {
-        fetch('/quotes')
+        fetch('/api/quotes')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`status ${response.status}`);
