@@ -5,3 +5,6 @@ deploy:
   api_key:
     secure: 48328a39-3312-405f-975b-8ec555197c97
   app: quotesdemoapp
+
+notifications:
+  email: false

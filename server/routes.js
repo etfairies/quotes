@@ -11,14 +11,8 @@ MongoClient.connect('mongodb://etfairies:etfairies@ds143221.mlab.com:43221/herok
     db = database;
 });
 
-// Get index page
-router.get('/', function (req, res) {
-  res.set('Content-Type', 'application/json');
-  res.send('{"message":"Hello from the custom server!"}');
-});
-
 // List all quotes from the database
-router.get('/quotes', function (req, res) {
+router.get('/api/quotes', function (req, res) {
     db.collection('quotes').find().toArray(function (err, results) {
         res.set('Content-Type', 'application/json');
 
@@ -31,7 +25,8 @@ router.get('/quotes', function (req, res) {
 });
 
 // Add new quote to database
-router.post('/add', function (req, res) {
+router.post('/api/add', function (req, res) {
+    
     var quote = {
         author: req.body.author,
         description: req.body.description,
@@ -39,20 +34,20 @@ router.post('/add', function (req, res) {
     }
 
     db.collection('quotes').save(quote);
-    res.redirect("/quotes");
+//    res.redirect("/quotes");
 });
 
 // Increment 'likes' of given quote
-router.post('/like', function (req, res) {
+router.post('/api/like', function (req, res) {
     db.collection('quotes').update({_id: ObjectId(req.body.quoteid)}, {
         $inc: {likes: 1}
     });
 
-    res.redirect("/quotes");
+//    res.redirect("/quotes");
 });
 
 // Delete quote
-router.post('/delete', function (req, res) {
+router.post('/api/delete', function (req, res) {
     db.collection('quotes').remove({_id: ObjectId(req.body.quoteid)});
     res.redirect("/quotes");
 });

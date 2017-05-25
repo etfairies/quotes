@@ -14,7 +14,7 @@ class QuotePage extends Component {
     }
 
     componentDidMount() {
-        fetch('/quotes')
+        fetch('/api/quotes')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`status ${response.status}`);
@@ -39,7 +39,8 @@ class QuotePage extends Component {
     render() {
         return (
                 <div className="Quotelist">
-                    <QuoteList quotes={this.state.quotes}/>
+                    <QuoteList quotes={this.state.quotes}
+                               message={this.state.message}/>
                 </div>
                 );
     }
@@ -48,11 +49,13 @@ class QuotePage extends Component {
 function QuoteList(props) {
     const quotes = props.quotes;
     return (
-            <div id="Quotelist">
-                {quotes.map((quote) =>
+            <div>
+                <p>{props.message}</p>
+                <div id="Quotelist">
+                    {quotes.map((quote) =>
                                 <Quote key={quote._id} quote={quote}/>
-                            )}
-            
+                                )}    
+                </div>
             </div>);
 }
 export default QuotePage;

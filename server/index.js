@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
+var bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(bodyParser.json());
 // Set routing
 var routes = require('./routes');
 app.use('/', routes);
@@ -12,7 +14,7 @@ app.use('/', routes);
 app.use(express.static(path.join(__dirname, '../react-ui/build')));
 
 // Get index page
-app.get('/', function (req, res) {
+app.get('/api', function (req, res) {
   res.set('Content-Type', 'application/json');
   res.send('{"message":"Hello from the custom server!"}');
 });
