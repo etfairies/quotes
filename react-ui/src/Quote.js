@@ -20,9 +20,6 @@ class Quote extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
-
-        }).then(function (response) {
-            return response.json();
         });
     }
 
@@ -58,31 +55,13 @@ function QuoteBox(props) {
                 <h3>{quote.description}</h3>
                 <p>{quote.author}</p>
             
-                <div id="QuoteButtons">
+                <div>
                     <p>{quote.likes} likes</p>
-            
-                    <LikeButton quote={quote} instance={props.instance} />
-                    <DeleteButton quote={quote} instance={props.instance}/>
+                    <br/>
+                    <input type="button" className="quoteButton" onClick={props.instance.handleLike} value="Like"/>
+                    <input type="button" className="quoteButton" onClick={props.instance.handleDelete} value="Delete"/>
                 </div>
             </div>
-            );
-}
-
-function LikeButton(props) {
-    const quote = props.quote;
-    return (
-            <form onSubmit={props.instance.handleLike}>
-                <button type="submit">Like</button>
-            </form>
-            );
-}
-
-function DeleteButton(props) {
-    const quote = props.quote;
-    return (
-            <form onSubmit={props.instance.handleDelete} >
-                <button type="submit">Delete</button>
-            </form>
             );
 }
 

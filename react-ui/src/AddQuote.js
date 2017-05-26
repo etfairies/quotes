@@ -54,7 +54,7 @@ class AddQuote extends Component {
                         <label for="description">Quote</label><br/>
                         <input type="text" id="description" name="description" value={this.state.description} onChange={this.handleInputChange}/>
                         <br/>
-                        <input type="button" value="Submit" onClick={this.sendQuote}/>
+                        <input type="button" id="addQuoteButton" value="Submit" onClick={this.sendQuote}/>
                 
                     </div>
                 </div>

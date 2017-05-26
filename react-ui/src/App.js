@@ -3,8 +3,8 @@ import './stylesheets/App.css';
 import QuotePage from './QuotePage';
 import AddQuote from './AddQuote';
 
-var home = "Home";
-var add = "AddQuote";
+var HomePage = "Home";
+var AddQuotePage = "AddQuote";
 
 class App extends Component {
     constructor(props) {
@@ -16,32 +16,33 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.setState({page: home});
+        this.setState({page: HomePage});
     }
 
     handleHomeClick() {
-        this.setState({page: home});
+        this.setState({page: HomePage});
     }
 
     handleAddQuoteClick() {
-        this.setState({page: add});
+        this.setState({page: AddQuotePage});
     }
 
     render() {
-        const page = this.state.page;
+        const clicked = this.state.page;
 
-        if (page === add) {
+        // Handle routing
+        if (clicked === AddQuotePage) {
             return (
                     <div className="App">
                         <Header instance={this} />
-                            <AddQuote />
+                        <AddQuote />
                     </div>
                     );
         } else {
             return (
                     <div className="App">
                         <Header instance={this} /> 
-                            <QuotePage />
+                        <QuotePage />
                     </div>
                     );
         }
