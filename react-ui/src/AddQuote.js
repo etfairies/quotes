@@ -10,6 +10,10 @@ class AddQuote extends Component {
         this.sendQuote = this.sendQuote.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
+    
+    static contextTypes = {
+        router: React.PropTypes.object.isRequired
+    }
 
     sendQuote(event) {
         
@@ -23,6 +27,10 @@ class AddQuote extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
+        });
+        this.setState({
+            author: '',
+            description: ''
         });
     }
 
@@ -41,10 +49,10 @@ class AddQuote extends Component {
                     <h2>Add new quote</h2>
                     <div>
                         <label for="author">Author</label><br/>
-                        <input type="text" id="author" name="author" onChange={this.handleInputChange}/>
+                        <input type="text" id="author" name="author" onChange={this.handleInputChange} value={this.state.author}/>
                         <br/>
                         <label for="description">Quote</label><br/>
-                        <input type="text" id="description" name="description" onChange={this.handleInputChange}/>
+                        <input type="text" id="description" name="description" value={this.state.description} onChange={this.handleInputChange}/>
                         <br/>
                         <input type="button" value="Submit" onClick={this.sendQuote}/>
                 
