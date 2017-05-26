@@ -1,6 +1,6 @@
 import React, { Component }
 from 'react';
-import './App.css';
+import './stylesheets/addquote.css';
 
 class AddQuote extends Component {
     constructor(props) {
@@ -40,10 +40,10 @@ class AddQuote extends Component {
                 <div>
                     <h2>Add new quote</h2>
                     <div>
-                        <label for="author">Author</label>
+                        <label for="author">Author</label><br/>
                         <input type="text" id="author" name="author" onChange={this.handleInputChange}/>
                         <br/>
-                        <label for="description">Quote</label>  
+                        <label for="description">Quote</label><br/>
                         <input type="text" id="description" name="description" onChange={this.handleInputChange}/>
                         <br/>
                         <input type="button" value="Submit" onClick={this.sendQuote}/>

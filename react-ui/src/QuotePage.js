@@ -1,6 +1,6 @@
 import React, { Component }
 from 'react';
-import './App.css';
+import './stylesheets/App.css';
 import Quote from './Quote';
 
 class QuotePage extends Component {
