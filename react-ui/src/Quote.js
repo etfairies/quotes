@@ -8,7 +8,7 @@ class Quote extends Component {
         this.handleLike = this.handleLike.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
     }
-
+  
     handleLike(event) {
 
         var quoteid = {quoteid: this.props.quote._id};
@@ -21,6 +21,7 @@ class Quote extends Component {
                 'Content-Type': 'application/json'
             }
         });
+        window.location.href = '/';
     }
 
     handleDelete(event) {
@@ -37,6 +38,7 @@ class Quote extends Component {
                 }
 
             });
+             window.location.href = '/';
         }
     }
 

@@ -1,5 +1,4 @@
-import React, { Component }
-from 'react';
+import React, { Component } from 'react';
 import './stylesheets/addquote.css';
 
 class AddQuote extends Component {
@@ -9,10 +8,6 @@ class AddQuote extends Component {
 
         this.sendQuote = this.sendQuote.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
-    }
-    
-    static contextTypes = {
-        router: React.PropTypes.object.isRequired
     }
 
     sendQuote(event) {
@@ -28,10 +23,12 @@ class AddQuote extends Component {
                 'Content-Type': 'application/json'
             }
         });
+        
         this.setState({
             author: '',
             description: ''
         });
+        alert('Quote added.');
     }
 
     handleInputChange(event) {
