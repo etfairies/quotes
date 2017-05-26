@@ -45,7 +45,6 @@ class Quote extends Component {
     render() {
         return (
                 <QuoteBox quote={this.props.quote} instance={this} />
-
                 );
     }
 }

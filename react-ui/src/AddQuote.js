@@ -11,7 +11,7 @@ class AddQuote extends Component {
     }
 
     sendQuote(event) {
-        
+
         var quote = {author: this.state.author,
             description: this.state.description};
 
@@ -23,7 +23,7 @@ class AddQuote extends Component {
                 'Content-Type': 'application/json'
             }
         });
-        
+
         this.setState({
             author: '',
             description: ''
@@ -45,18 +45,34 @@ class AddQuote extends Component {
                 <div>
                     <h2>Add new quote</h2>
                     <div>
-                        <label for="author">Author</label><br/>
-                        <input type="text" id="author" name="author" onChange={this.handleInputChange} value={this.state.author}/>
-                        <br/>
-                        <label for="description">Quote</label><br/>
-                        <input type="text" id="description" name="description" value={this.state.description} onChange={this.handleInputChange}/>
-                        <br/>
+                        <Author instance={this}/><br/>
+                        <Description instance={this} /><br/>
                         <input type="button" id="addQuoteButton" value="Submit" onClick={this.sendQuote}/>
-                
                     </div>
                 </div>
                 );
     }
 }
+
+function Author(props) {
+    var instance = props.instance;
+    return (
+            <div>
+                <label for="author">Author</label><br/>
+                <input type="text" id="author" name="author" onChange={instance.handleInputChange} value={instance.state.author}/>
+            </div>
+            );
+}
+
+function Description(props) {
+    var instance = props.instance;
+    return (
+            <div>
+                <label for="description">Quote</label><br/>
+                <input type="text" id="description" name="description" value={instance.state.description} onChange={instance.handleInputChange}/>
+            </div>
+            );
+}
+
 
 export default AddQuote;

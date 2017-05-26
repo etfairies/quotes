@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './stylesheets/App.css';
-//import QuotePage from './QuotePage';
-//import AddQuote from './AddQuote';
 import Content from './Content';
 
 var HomePage = "Home";
@@ -29,24 +27,6 @@ class App extends Component {
     }
 
     render() {
-//        const clicked = this.state.page;
-
-        // Handle routing
-        /*       if (clicked === AddQuotePage) {
-         return (
-         <div className="App">
-         <Header instance={this} />
-         <AddQuote />
-         </div>
-         );
-         } else {
-         return (
-         <div className="App">
-         <Header instance={this} /> 
-         <QuotePage />
-         </div>
-         );
-         }*/
         return (
                 <div className="App">
                     <Header instance={this} />
