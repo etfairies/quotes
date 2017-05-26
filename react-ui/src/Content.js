@@ -18,13 +18,13 @@ class Content extends Component {
         // Handle routing
         if (page === AddQuotePage) {
             return (
-                    <div className="App">
+                    <div className="Content">
                         <AddQuote />
                     </div>
                     );
         } else {
             return (
-                    <div className="App">
+                    <div className="Content">
                         <QuotePage />
                     </div>
                     );
