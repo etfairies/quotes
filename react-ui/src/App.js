@@ -15,6 +15,10 @@ class App extends Component {
         this.handleAddQuoteClick = this.handleAddQuoteClick.bind(this);
     }
 
+    componentDidMount() {
+        this.setState({page: home});
+    }
+    
     handleHomeClick() {
         this.setState({page: home});
     }
@@ -26,14 +30,15 @@ class App extends Component {
     render() {
         const page = this.state.page;
 
-        if (page === 'AddQuote') {
+        if (page === add) {
             return (
                     <div className="App">
                         <Header instance={this} />
                         <AddQuote />
                     </div>
                     );
-        } else {
+        }
+        else {
             return (
                     <div className="App">
                         <Header instance={this} /> 
@@ -52,8 +57,8 @@ function Header(props) {
                     <h1>Quotes</h1>
                 </div>
                 <div className="Navbar">
-                    <a href="" onClick={instance.handleHomeClick}>Home</a>
-                    <a href="" onClick={instance.handleAddQuoteClick}>Add Quote</a>
+                    <a onClick={instance.handleHomeClick}>Home</a>
+                    <a onClick={instance.handleAddQuoteClick}>Add Quote</a>
                 </div>
             </div>
             );

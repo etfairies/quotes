@@ -15,7 +15,7 @@
 
 .Navbar {
     background-color: #30e8e8;
-    height: 32px;
+    height: 39px;
     color: white;
 }
 
@@ -23,6 +23,11 @@
      float: left;
      padding: 10px;
      margin-left: 20px;
+}
+
+.Navbar a:hover {
+    background-color: #a3f5f5;
+    color: #009999;
 }
 
 #Quote {
