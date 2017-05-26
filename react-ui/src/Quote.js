@@ -27,17 +27,20 @@ class Quote extends Component {
     }
 
     handleDelete(event) {
-        var quoteid = {quoteid: this.props.quote._id};
-        
-        fetch('/api/delete', {
-            method: 'POST',
-            body: JSON.stringify(quoteid),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
+        var deleteQuote = window.confirm("Delete this quote?");
+        if (deleteQuote) {
+            var quoteid = {quoteid: this.props.quote._id};
 
-        });
+            fetch('/api/delete', {
+                method: 'POST',
+                body: JSON.stringify(quoteid),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+
+            });
+        }
     }
 
     render() {
@@ -57,7 +60,7 @@ function QuoteBox(props) {
             
                 <div id="QuoteButtons">
                     <p>{quote.likes} likes</p>
-        
+            
                     <LikeButton quote={quote} instance={props.instance} />
                     <DeleteButton quote={quote} instance={props.instance}/>
                 </div>
@@ -77,7 +80,7 @@ function LikeButton(props) {
 function DeleteButton(props) {
     const quote = props.quote;
     return (
-            <form onSubmit={props.instance.handleDelete}>
+            <form onSubmit={props.instance.handleDelete} >
                 <button type="submit">Delete</button>
             </form>
             );
