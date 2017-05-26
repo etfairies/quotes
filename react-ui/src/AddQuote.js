@@ -43,12 +43,12 @@ class AddQuote extends Component {
     render() {
         return(
                 <div>
-                    <h2>Add new quote</h2>
-                    <div>
-                        <Author instance={this}/><br/>
-                        <Description instance={this} /><br/>
-                        <input type="button" id="addQuoteButton" value="Submit" onClick={this.sendQuote}/>
-                    </div>
+                    <h2>Add new quote</h2><br/>
+                
+                    <Author instance={this}/><br/>
+                    <Description instance={this} /><br/>
+                    <input type="button" id="addQuoteButton" value="Submit" onClick={this.sendQuote}/>
+                
                 </div>
                 );
     }
