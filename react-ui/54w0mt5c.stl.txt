@@ -1,4 +1,4 @@
-import React, { Component }
+﻿import React, { Component }
 from 'react';
 import './App.css';
 
@@ -8,11 +8,13 @@ class AddQuote extends Component {
         this.state = {author: '', description: ''};
 
         this.sendQuote = this.sendQuote.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     sendQuote(event) {
-
+        
+        event.preventDefault();
+        alert("pushed button");
+        alert(this.state.author + " " + this.state.description);
         var quote = {author: this.state.author,
             description: this.state.description};
 
@@ -49,9 +51,9 @@ class AddQuote extends Component {
                         <label for="description">Quote</label>  
                         <input type="text" id="description" name="description" onChange={this.handleInputChange}/>
                         <br/>
-                        <input type="button" value="Submit" onClick={this.sendQuote}/>
-                
-                    </div>
+                        <input type="button" value="Submit" onclick={this.sendQuote}/>
+                   
+                </div>
                 </div>
                 );
     }
