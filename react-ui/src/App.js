@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './stylesheets/App.css';
-import QuotePage from './QuotePage';
-import AddQuote from './AddQuote';
+//import QuotePage from './QuotePage';
+//import AddQuote from './AddQuote';
+import Content from './Content';
 
 var HomePage = "Home";
 var AddQuotePage = "AddQuote";
@@ -9,7 +10,7 @@ var AddQuotePage = "AddQuote";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {page: ''}
+        this.state = {page: ''};
 
         this.handleHomeClick = this.handleHomeClick.bind(this);
         this.handleAddQuoteClick = this.handleAddQuoteClick.bind(this);
@@ -28,24 +29,30 @@ class App extends Component {
     }
 
     render() {
-        const clicked = this.state.page;
+//        const clicked = this.state.page;
 
         // Handle routing
-        if (clicked === AddQuotePage) {
-            return (
-                    <div className="App">
-                        <Header instance={this} />
-                        <AddQuote />
-                    </div>
-                    );
-        } else {
-            return (
-                    <div className="App">
-                        <Header instance={this} /> 
-                        <QuotePage />
-                    </div>
-                    );
-        }
+        /*       if (clicked === AddQuotePage) {
+         return (
+         <div className="App">
+         <Header instance={this} />
+         <AddQuote />
+         </div>
+         );
+         } else {
+         return (
+         <div className="App">
+         <Header instance={this} /> 
+         <QuotePage />
+         </div>
+         );
+         }*/
+        return (
+                <div className="App">
+                    <Header instance={this} />
+                    <Content page={this.state.page} />
+                </div>
+                );
     }
 }
 
