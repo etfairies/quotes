@@ -27,7 +27,17 @@ class Quote extends Component {
     }
 
     handleDelete(event) {
-        alert("Clicked Delete");
+        var quoteid = {quoteid: this.props.quote._id};
+        
+        fetch('/api/delete', {
+            method: 'POST',
+            body: JSON.stringify(quoteid),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+
+        });
     }
 
     render() {

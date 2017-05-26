@@ -12,7 +12,7 @@ class AddQuote extends Component {
     }
 
     sendQuote(event) {
-
+        
         var quote = {author: this.state.author,
             description: this.state.description};
 
@@ -23,9 +23,6 @@ class AddQuote extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
-
-        }).then(function (response) {
-            return response.json();
         });
     }
 
